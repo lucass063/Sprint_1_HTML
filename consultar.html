@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Consultar</title>
+    <link rel="stylesheet" href="css/estilo.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -15,7 +16,42 @@
         <a href="cadastrar.html" class="w3-bar-item w3-button"><i class="fa fa-user-plus" aria-hidden="true"></i> Cadastrar</a>
         <a href="alterar.html" class="w3-bar-item w3-button"><i class="fa fa-wrench" aria-hidden="true"></i> Alterar</a>
         <a href="atendimento.html" class="w3-bar-item w3-button"><i class="fa fa-user-o" aria-hidden="true"></i> Atendimento</a>
-      </div>
+    </div> 
+
     
+<div class="w3-container">
+    <h1>Buscar Aluno</h1>
+
+    <input class="w3-input w3-border w3-padding" type="text" placeholder="🔍 Digite o nome do aluno.." id="myInput" onkeyup="myFunction()">
+    <ul class="w3-ul w3-margin-top" id="myUL">
+      <li>Adele</li>
+      <li>Agnes</li>
+      <li>Billy</li>
+      <li>Bob</li>
+      <li>Calvin</li>
+      <li>Christina</li>
+      <li>Cindy</li>
+    </ul>
+  </div>
+  
+  <script>
+  function myFunction() {
+    var input, filter, ul, li, a, i;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+      txtValue = li[i].textContent || li[i].innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        li[i].style.display = "";
+      } else {
+        li[i].style.display = "none";
+      }
+    }
+  }
+  </script>
+  
+
 </body>
 </html>
